@@ -7,7 +7,6 @@ def read():
 
     rss_array = []
     response = {}
-    response['tile'] = azure_rss.feed.title
     response['lastupdate'] = azure_rss.updated
 
     for entry in azure_rss.entries:
@@ -17,4 +16,4 @@ def read():
         rss['pubDate']  = entry.published
         rss_array.append(rss)
     response['rss'] = rss_array
-    print(response)
+    return response
